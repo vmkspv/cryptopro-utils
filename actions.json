@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Установить сертификат",
+        "command": "/opt/cprocsp/bin/amd64/csptestf -absorb -cert -pattern 'rutoken'",
+        "icon": "document-revert-rtl-symbolic"
+    },
+    {
+        "title": "Просмотреть сведения",
+        "command": "gnome-terminal -- bash -c '/opt/cprocsp/bin/amd64/certmgr -list -store uMy; read -p \"Нажмите Enter для выхода...\"'",
+        "icon": "help-about-symbolic"
+    },
+    {
+        "title": "Очистить хранилище",
+        "command": "/opt/cprocsp/bin/amd64/certmgr -delete -all -store uMy",
+        "icon": "user-trash-symbolic"
+    },
+    {
+        "type": "separator"
+    },
+    {
+        "title": "Открыть КриптоПро CSP",
+        "command": "/opt/cprocsp/bin/amd64/cptools",
+        "icon": "emblem-system-symbolic"
+    },
+    {
+        "type": "separator"
+    },
+    {
+        "title": "Инструменты проверки",
+        "type": "submenu",
+        "icon": "preferences-other-symbolic",
+        "submenu": [
+            {
+                "title": "Перечислить носители",
+                "command": "gnome-terminal -- bash -c '/opt/cprocsp/bin/amd64/csptest -card -enum -v -v; read -p \"Нажмите Enter для выхода...\"'",
+                "icon": "media-removable-symbolic"
+            },
+            {
+                "title": "Отобразить контейнеры",
+                "command": "gnome-terminal -- bash -c '/opt/cprocsp/bin/amd64/csptest -keyset -enum_cont -fqcn -verifyc; read -p \"Нажмите Enter для выхода...\"'",
+                "icon": "view-list-symbolic"
+            },
+            {
+                "title": "Протестировать подпись",
+                "command": "gnome-terminal -- bash -c 'echo Hello_World > hello.txt && /opt/cprocsp/bin/amd64/cryptcp -sign -uMy -nochain -norev -strict hello.txt || { rm -f hello.txt; false; } && cat hello.txt.sig && rm -f hello.txt hello.txt.sig; read -p \"Нажмите Enter для выхода...\"'",
+                "icon": "dialog-password-symbolic"
+            }
+        ]
+    }
+]

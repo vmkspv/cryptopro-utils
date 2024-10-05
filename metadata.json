@@ -1,0 +1,7 @@
+{
+    "uuid": "cryptopro-utils@vmkspv.github.com",
+    "name": "CryptoPro Utilities",
+    "description": "Расширение GNOME Shell для быстрого управления сертификатами электронной подписи через «КриптоПро CSP».",
+    "shell-version": [ "45", "46", "47" ],
+    "url": "https://github.com/vmkspv/cryptopro-utils"
+}
